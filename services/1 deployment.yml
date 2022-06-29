@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: myapp001
+  name: myapp001
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp001
+  template:
+    metadata:
+      labels:
+        app: myapp001
+    spec:
+      containers:
+      - image: sreeharshav/rollingupdate:v5
+        name: rollingupdate 

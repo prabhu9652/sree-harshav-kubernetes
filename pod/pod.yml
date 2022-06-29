@@ -1,0 +1,12 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mydemo-pod
+  labels:
+    env: prod
+    owner: prabhu
+spec:
+  containers:
+    - name: containers-1
+      image: httpd:latest             

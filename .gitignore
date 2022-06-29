@@ -1,2 +1,2 @@
 .terraform
-private-key/*
+terraform-manifests/private-key/*

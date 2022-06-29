@@ -27,20 +27,20 @@ unzip awscliv2.zip
 export DB_HOSTNAME=${rds_db_endpoint} 
 echo 'export AWS_DEFAULT_REGION=us-east-1' >> /root/.bashrc
 echo 'export NAME=stacksimplify.club' >> /root/.bashrc
-echo 'export KOPS_STATE_STORE=s3://stacksimplify.club' >> /root/.bashrc
+echo 'export KOPS_STATE_STORE=s3://stacksimplify.club1' >> /root/.bashrc
 
 # changing directory
 cd /root
 
 # creating k8s cluster(single master t2.small and 2 nodes t3.micro)
 #kops create cluster --name=stacksimplify.club \
-#     --state=s3://stacksimplify.club --zones=us-east-1a,us-east-1b,us-east-1c \
+#     --state=s3://stacksimplify.club1 --zones=us-east-1a,us-east-1b,us-east-1c \
 #     --node-count=2 --master-count=1 --node-size=t3.medium --master-size=t3.medium \
 #    --master-zones=us-east-1a  --master-volume-size 10 --node-volume-size 10 \
 #     --dns-zone=stacksimplify.club --yes
 
 kops create cluster --name=stacksimplify.club \
-     --state=s3://stacksimplify.club --zones=us-east-1a,us-east-1b,us-east-1c \
+     --state=s3://stacksimplify.club1 --zones=us-east-1a,us-east-1b,us-east-1c \
      --node-count=1 --master-count=1 --node-size=t2.medium --master-size=t2.medium \
     --master-zones=us-east-1a  --master-volume-size 10 --node-volume-size 10 \
      --dns-zone=stacksimplify.club --yes
